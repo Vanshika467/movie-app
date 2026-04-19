@@ -31,7 +31,8 @@ function MovieCard({ movie }) {
   return (
     <div
     style={{
-      width: "200px",
+      width: "100%",
+        maxWidth: "180px",
       margin: "15px",
       textAlign: "center",
       cursor: "pointer",
