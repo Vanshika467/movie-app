@@ -40,7 +40,7 @@ function Home() {
 
         if (data.results) {
           const filtered = data.results.filter(
-            movie => movie.vote_average >= 7
+            movie => movie.vote_average >= 6.6
           );
         
           if (page === 1) {
