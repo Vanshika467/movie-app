@@ -30,17 +30,16 @@ function MovieCard({ movie }) {
 
   return (
     <div
-    style={{
-      width: "100%",
-        maxWidth: "180px",
-      margin: "15px",
-      textAlign: "center",
-      cursor: "pointer",
-      backgroundColor: "#111",
-      borderRadius: "10px",
-      overflow: "hidden",
-      transition: "transform 0.3s ease, box-shadow 0.3s ease"
-    }}
+    
+  style={{
+    width: "100%",
+    maxWidth: "160px",
+    backgroundColor: "#111",
+    borderRadius: "10px",
+    overflow: "hidden",
+    textAlign: "center",
+    margin: "0 auto"
+  }}
     onMouseEnter={(e) => {
       e.currentTarget.style.transform = "scale(1.05)";
       e.currentTarget.style.boxShadow = "0 10px 20px rgba(0,0,0,0.5)";
@@ -57,11 +56,16 @@ function MovieCard({ movie }) {
   alt={movie.title}
   style={{
     width: "100%",
-    height: "300px",
+    aspectRatio: "2/3",
     objectFit: "cover"
   }}
 />
-<h3 style={{ color: "white", padding: "10px", fontSize: "16px" }}>
+<h3 style={{
+  padding: "6px",
+  fontSize: "13px",
+  height: "40px",
+  overflow: "hidden"
+}}>
   {movie.title}
 </h3>
       </Link>

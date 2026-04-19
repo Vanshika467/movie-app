@@ -112,13 +112,14 @@ function Home() {
 
       {/* 🔥 RESPONSIVE GRID */}
       <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
-          gap: "20px",
-          padding: "20px"
-        }}
-      >
+  style={{
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))",
+    gap: "16px",
+    padding: "16px",
+    justifyItems: "center"
+  }}
+>
         {loading && page === 1 ? (
           <div style={spinnerStyle}></div>
         ) : error ? (
