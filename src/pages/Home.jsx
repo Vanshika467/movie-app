@@ -24,7 +24,7 @@ function Home() {
   useEffect(() => {
     const url = debouncedQuery
       ? `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${debouncedQuery}&page=${page}`
-      : `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=${page}`;
+      : `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&page=${page}`;
 
     setLoading(true);
     setError(false);
@@ -39,10 +39,14 @@ function Home() {
         }
 
         if (data.results) {
+          const filtered = data.results.filter(
+            movie => movie.vote_average >= 7
+          );
+        
           if (page === 1) {
-            setMovies(data.results);
+            setMovies(filtered);
           } else {
-            setMovies(prev => [...prev, ...data.results]);
+            setMovies(prev => [...prev, ...filtered]);
           }
         }
 
@@ -90,7 +94,7 @@ function Home() {
         color: "white",
         fontSize: "32px"
       }}>
-        Popular Movies 🎬
+        ⭐ Top Rated Movies
       </h1>
 
       <input
